@@ -15,8 +15,8 @@ input.on("noteon", function (msg) {
 	console.log(msg);
 	// list of usable keys: https://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols
 	if (msg.note === 36) {
-		const cmd = spawn("xdotool", ["key", "XF86Launch0"]);
+		spawn("xdotool", ["key", "XF86Launch1"]);
 	} else if (msg.note === 37) {
-		const cmd = spawn("xdotool", ["key", "XF86Launch1"]);
+		spawn("xdotool", ["key", "XF86Launch0"]);
 	}
 });
