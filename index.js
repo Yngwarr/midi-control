@@ -17,12 +17,10 @@ input.on("noteon", function (msg) {
 	// list of usable keys: https://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols
 
 	// discord deafen/undeafen
-	if (msg.note === 36) {
+	if ([36, 38, 40, 42, 44, 46, 48, 50].includes(msg.note)) {
 		spawn("xdotool", ["key", "XF86Launch1"]);
 	// discord mute/unmute
-	} else if (msg.note === 37) {
+	} else if ([37, 39, 41, 43, 45, 47, 49, 51].includes(msg.note)) {
 		spawn("xdotool", ["key", "XF86Launch0"]);
-	} else if (msg.note === 38) {
-		spawn("espeak", ["you found me, great job!"])
 	}
 });
